@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    nav(ng-controller='LogOutController')
+      ul
+        li
+          a.logo(href='' ng-click='main()') 
+            img.mainLogo(src='/images/icon_white.png')
+        li.logout(ng-show='isLoggedIn')
+          a(href='' ng-click='logout()') Sign out
+    div(ng-view)  
+     
+

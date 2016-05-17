@@ -1,0 +1,61 @@
+.form-wrapper.padded-left-right(ng-controller="MovieInCinemaController")
+  form#movie_info
+    h2.header-three Movie Info
+      fieldset
+        .input-container
+            input(id="name" name="name" type="text" ng-model="movie.name" required placeholder="Movie name")
+    fieldset
+        h2.place-movie  Where did you see this movie ?                      
+            div.onoffswitch
+                input.onoffswitch-checkbox(type="checkbox" name="onoffswitch" ng-model="incinemachecked" id="myonoffswitch" ng-init="checked=false")
+                label.onoffswitch-label(for="myonoffswitch")
+                    span.onoffswitch-inner
+                    span.onoffswitch-switch
+    fieldset
+        .input-container
+            input(id="seen-city" name="seen-city" type="text" ng-model="movie.city" ng-if="incinemachecked" required  placeholder="City")
+    fieldset
+        .input-container
+            input(id="seen-cinema" name="seen-cinema" type="text" ng-model="movie.cinema"  ng-if="incinemachecked" required  placeholder="Cinema")
+    fieldset
+        .input-container
+            input(id="seen-hall" name="seen-hall" type="text" ng-model="movie.hall" ng-if="incinemachecked" required placeholder="Hall") 
+    fieldset
+        .input-container
+            input(id="effect" name="effect" type="text" ng-model='movie.effect' ng-if="incinemachecked" placeholder="Effect")                           
+    div.form-group(ng-class="{'margin-on-laptop': !incinemachecked, 'margin-in-cinemas': incinemachecked}")
+        div.dropdown
+            a.dropdown-toggle(id='dropdown1' role='button' data-toggle='dropdown' data-target='#')
+                div.input-group.seen-date-padding
+                    input.form-control(type="text" data-ng-model="movie.date" placeholder="Click to choose date" id="seen-date" required)
+                    span.input-group-addon
+                        i.glyphicon.glyphicon-calendar
+                    ul.dropdown-menu(role="menu" aria-labelledby="dLabel")
+                        datetimepicker(data-ng-model="movie.date" data-datetimepicker-config="{ dropdownSelector: '#dropdown1'}")                          
+    fieldset
+        h2.rate-movie Rate this movie
+    fieldset
+        .rating
+            input(type="radio" id="star5" name="rating" value="5" ng-model="movie.rate") 
+            label(for="star5" title="Rocks!") Five stars
+            input(type="radio" id="star4" name="rating" value="4" ng-model="movie.rate")
+            label(for="star4" title="Pretty good.") Four stars
+            input(type="radio" id="star3" name="rating" value="3" ng-model="movie.rate") 
+            label(for="star3" title="Meh.") Three stars
+            input(type="radio" id="star2" name="rating" value="2" ng-model="movie.rate")
+            label(for="star2" title="Kinda bad") Two stars
+            input(type="radio" id="star1" name="rating" value="1" ng-model="movie.rate")
+            label(for="star1" title="Sucks big time") One star
+    fieldset
+        div.captcha(id="word-list")
+            h2.select-movie-type Select a type for this movie
+                ul
+                    li(ng-repeat="movietype in movietypes")
+                        a(ng-click="typeClicked($index)" ng-class="{selected: $index == selectedIndex}" value="{{ movietype }}") {{ movietype }}
+    fieldset
+        h2.mark-favourite Mark this movie as your favourite
+    div.roundedCheckbox
+        input(type="checkbox" value="None" id="isFavourite" name="check" ng-model="movie.isfavourite")
+        label(for="isFavourite") 
+    div.button-wrapper
+        button.button-special.btn.btn-success(type="submit" ng-click="saveMovie(movie, incinemachecked)") Record movie 

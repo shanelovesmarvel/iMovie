@@ -1,0 +1,69 @@
+extends layout
+
+block content
+
+ div(ng-controller="MovieOnLaptopController")
+    div.movie-list-card(ng-class="{'movie-list-card-width': !canshow, 'movie-list-card-recalcu-width': canshow}")
+       ol.breadcrumb
+         li View seen movies
+         li 
+           a(href='/#/movies_in_cinemas' ) in cinemas
+         li 
+           a(href='/#/movies_on_laptop' ) on laptop 
+       a.btn.btn-success(href='' style="margin-bottom: 15px; border: none;" ng-click="openMovie()") Record a movie
+
+       div.movie-table-card
+           ul(ng-repeat = "movie in movies | orderBy: '-date'")
+              li {{ movie.name }}
+              li Date: {{ movie.date | date:'short'}}
+              li Type: {{ movie.type }}
+              li Rate: {{ movie.rate }}
+    .form-right(ng-controller="MovieController" ng-show="canshow")
+        form#movie_info
+            h2.header-three Movie Info 
+            fieldset
+                a.close-img(href="" ng-click="closeMovie()")
+                  img(src='/images/close.png')
+            fieldset
+                .input-container
+                    input(id="name" name="name" type="text" ng-model="movie.name" required placeholder="Movie name")                                              
+            div.form-group
+                div.dropdown
+                    a.dropdown-toggle(id='dropdown1' role='button' data-toggle='dropdown' data-target='#')
+                        div.input-group.seen-date-padding
+                            input.form-control(type="text" data-ng-model="movie.date" placeholder="Click to choose date" id="seen-date" required)
+                            span.input-group-addon
+                                i.glyphicon.glyphicon-calendar
+                    ul.dropdown-menu(role="menu" aria-labelledby="dLabel")
+                        datetimepicker(data-ng-model="movie.date" data-datetimepicker-config="{ dropdownSelector: '#dropdown1'}")                          
+            fieldset
+                h2.rate-movie Rate this movie
+            fieldset
+                .rating
+                    input(type="radio" id="star5" name="rating" value="5" ng-model="movie.rate") 
+                    label(for="star5" title="Rocks!") Five stars
+                    input(type="radio" id="star4" name="rating" value="4" ng-model="movie.rate")
+                    label(for="star4" title="Pretty good.") Four stars
+                    input(type="radio" id="star3" name="rating" value="3" ng-model="movie.rate") 
+                    label(for="star3" title="Meh.") Three stars
+                    input(type="radio" id="star2" name="rating" value="2" ng-model="movie.rate")
+                    label(for="star2" title="Kinda bad") Two stars
+                    input(type="radio" id="star1" name="rating" value="1" ng-model="movie.rate")
+                    label(for="star1" title="Sucks big time") One star
+            fieldset
+                div.captcha(id="word-list")
+                    h2.select-movie-type Select a type for this movie
+                    ul
+                        li(ng-repeat="movietype in movietypes")
+                            a(ng-click="typeClicked($index)" ng-class="{selected: $index == selectedIndex}" value="{{ movietype }}") {{ movietype }}
+            fieldset
+                h2.mark-favourite Mark this movie as your favourite
+            div.roundedCheckbox
+                input(type="checkbox" value="None" id="isFavourite" name="check" ng-model="movie.isfavourite")
+                label(for="isFavourite") 
+            div.button-wrapper
+                button.button-special.btn.btn-success(type="submit" ng-click="saveMovie(movie, false)") Record movie               
+
+ 
+
+       

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    .login-box
+      .login-heading
+        h3 Sign In
+      .login-body
+        form#loginbox.new_user(accept-charset='UTF-8', method='post', data-ng-controller='LogInController')
+           input#loginUserName.form-control.top(autofocus='autofocus', placeholder='English Name', type='text',data-ng-model='user.username' required)
+           input#loginPassword.form-control.bottom(placeholder='Password', type='password', data-ng-model='user.password' required)
+           div
+            input#loginBtn.btn.btn-save(ng-click='logIn(user.username, user.password, user.remember)', type='submit', value='Sign in')

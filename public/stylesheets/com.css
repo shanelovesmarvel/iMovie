@@ -1,0 +1,28 @@
+:-moz-placeholder {
+    color: green;
+}
+ 
+::-webkit-input-placeholder {
+    color: green;
+}
+.com_form{
+    max-width: 430px;
+    background: #FFF;
+    padding: 30px 30px 20px 30px;
+    box-shadow: rgba(187, 187, 187, 1) 0 0px 20px -1px;
+    -webkit-box-shadow: rgba(187, 187, 187, 1) 0 0px 20px -1px;
+    color: #666;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.info_form{
+    max-width: 450px;
+    background: #FFF;
+    padding: 30px 30px 20px 30px;
+    box-shadow: rgba(187, 187, 187, 1) 0 0px 20px -1px;
+    -webkit-box-shadow: rgba(187, 187, 187, 1) 0 0px 20px -1px;
+    color: #666;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}

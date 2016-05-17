@@ -1,0 +1,871 @@
+nav{
+  background-color: #333;
+  margin: 0;
+  overflow: hidden;
+}
+nav ul{
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+nav > ul > li > a{
+  color: #aaa;
+  display: block;
+  line-height: 2em;
+  padding: 0.5em 1.5em;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: larger;
+}
+nav ul li.logout{
+  float: right;
+}
+
+.logo{
+  float: left;
+  padding-right: 20px;
+  display: block;
+}
+
+.mainLogo{
+   height: 30px;
+   opacity: 0.8;
+}
+
+/*******************Index page **********************/
+
+.banner{
+  width: 100%;
+  height: 700px;
+  padding-top: 80px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner, .banner ul li {
+   height: 700px;
+   width: 100%;
+   overflow: hidden;
+}
+
+.main_a{
+   position: relative;
+   background: white;
+}
+
+.main{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.main_aa{
+  padding-top: 30px;
+}
+.main_aa .img{
+  text-align: center;
+}
+.main_aa .img .film{
+   border: 0;
+   height: 128px;
+   width: 128px;
+}
+
+.main_aa .text.a p {
+    color: #1f2228;
+}
+
+.main_aa .text {
+    text-align: center;
+    padding: 5px 0;
+    font-size: 18px;
+}
+.main_aa .text.a {
+    color: #8c8c8c;
+}
+
+.main_aa .text p {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.main_ab{
+   padding: 20px 0 100px 0;
+   overflow: hidden;
+}
+
+
+.main_ab_ul {
+    width: 230px;
+    float: left;
+    margin-left: 80px;
+}
+
+.main_ab_li{
+    width: 164px;
+    height: 188px;
+    text-align: center;
+}
+
+.main_ab_li .a{
+    text-decoration: none;
+    color: #666666;
+}
+
+.main_ab_ul .text {
+    color: #8c8c8c;
+    text-align: center;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-top: 50px;
+}
+
+.menuitem:hover{
+   opacity: 0.5;
+}
+
+/********************Movies In Cineams ******************/
+
+.movie-list-box {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px #aaa;
+  padding: 1em;
+  margin-right: 27px;
+  margin-left: 27px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.movie-list-box-margin{
+   width: calc(100% - 54px);
+}
+
+.record-button{
+   display: inline;
+   padding-left: 20px;
+   padding-top: 10px;
+   height: 20px;
+}
+
+.breadcrumb a{
+   text-decoration: none;
+}
+
+.breadcrumb a:link{
+   color: #235A9F;
+   text-decoration: none;
+}
+
+.breadcrumb a:hover{
+   color: #235A9F;
+   text-decoration: none;
+}
+
+
+.movie-table{
+   margin: 0 auto;
+   min-width: 300px;
+   width: 100%;
+}
+
+.movie-table tr{
+   border-top: 1px solid #ddd;
+   border-bottom: 1px solid #ddd;
+}
+
+.movie-table th{
+   display: none;
+}
+
+.movie-table td {
+   display: block;
+}
+
+.movie-table td:first-child {
+   padding-top: .5em;
+}
+
+.movie-table td:last-child {
+   padding-bottom: .5em;
+}
+
+.movie-table td:before {
+   content: attr(data-th) ": ";
+   font-weight: bold;
+   width: 6.5em;
+   display: inline-block;
+}
+
+@media(min-width: 480px){
+  .movie-table td:before{
+     display: none;
+  }
+}
+
+.movie-table th, .movie-table td{
+   text-align: left;
+}
+
+@media(min-width: 480px){
+  .movie-table th, .movie-table td {
+     display: table-cell;
+     padding: .25em .5em;
+  }
+  .movie-table th:first-child, .movie-table td:first-child {
+     padding-left: 0;
+  }
+  .movie-table th:last-child, .movie-table td:last-child {
+     padding-right: 0;
+  }
+}
+
+body {
+  padding: 0 2em;
+  font-family: Avenir Next Pro, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #444;
+  background: #fff;
+}
+
+.movie-table {
+  background: #34495E;
+  color: #fff;
+  border-radius: .4em;
+  overflow: hidden;
+}
+.movie-table tr {
+  border-color: #46637f;
+}
+.movie-table th, .movie-table td {
+  margin: .5em 1em;
+}
+@media (min-width: 480px) {
+  .movie-table th, .movie-table td {
+    padding: 1em !important;
+  }
+}
+.movie-table th, .movie-table td:before {
+  color: #dd5;
+}
+
+/********************Movies On Laptop ******************/
+
+.movie-list-card {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px #aaa;
+  padding: 1em;
+  margin-left: 27px;
+  margin-right: 27px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  min-width: 300px;
+  display:inline-block;
+}
+
+.movie-list-card-width{
+   width: calc(100% - 54px);
+}
+
+.movie-list-card-recalcu-width{
+   width: calc(100% - 434px);
+}
+
+.movie-table-card {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  margin-top: 30px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.movie-table-card ul {
+  list-style: none;
+  float: left;
+  width: 200px;
+  margin: 10px 20px 10px 0px;
+  border: 5px solid #f2f3f3;
+  padding: 5px;
+  text-align: center;
+  background-color: #FFF;
+}
+
+.movie-table-card ul:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -moz-box-shadow: 3px 5px 7px rgba(0, 0, 0, .7);
+  -webkit-box-shadow: 3px 5px 7px rgba(0, 0, 0, .7);
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, .7);
+  cursor: pointer;
+  background: #d8e9f9;
+}
+
+.movie-table-card ul li {
+  border-bottom: 1px dashed #cfd2d2;
+  padding: 10px 0;
+}
+
+.movie-table-card ul li:first-child {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  background: #34495E;
+  width:180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+
+.movie-table-card ul li:nth-child(2) {
+  background: #fbfbfb;
+}
+
+.movie-table-card ul li:nth-child(3) {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.movie-table-card ul li:nth-child(n+4) {
+  font-size: 14px;
+}
+
+.movie-table-card ul li:last-child a {
+  color: #F0F0F0;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: 1px solid #c4cbcc;
+  padding: 10px;
+  margin: 5px 0;
+  background: #0061bb;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #0061bb 0%, #164e82 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0061bb), color-stop(100%, #164e82));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #0061bb 0%, #164e82 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #0061bb 0%, #164e82 100%);
+  /* Opera11.10+ */
+  background: -ms-linear-gradient(top, #0061bb 0%, #164e82 100%);
+  /* IE10+ */
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#0061bb', endColorstr='#164e82', GradientType=0);
+  /* IE6-9 */
+  background: linear-gradient(top, #0061bb 0%, #164e82 100%);
+  /* W3C */
+}
+
+
+/********************Movie on laptop******************/
+.fullHeight{
+  height: 100%;
+  width: 100%;
+  display: inline-flex;
+}
+
+.full{
+  height: 100%;
+  width: 100%;
+}
+
+.form-right{
+  background: #f2f2f2;
+  border-radius: 5px;
+  max-width: 390px;
+  min-width: 350px;
+  max-height: 1000px;
+    margin: 30px 10px 30px -20px;
+    padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  right: 0;
+  float: right !important;
+  transition: all linear 0.4s;
+}
+
+.close-img img{
+   background-repeat: no-repeat; 
+   display: block;
+   width: 18px;
+   height: 18px;
+   margin-top: -30px;
+   float: right;
+}
+
+.close-img:hover img{
+   background: url('../images/close-hover.png');
+}
+
+.light-bg{
+  background-color: #fff;
+}
+
+.layout-container{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1010px;
+}
+
+.layout-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+.intro{
+  max-width: 420px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.padded-left-right{
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.logo1.signup img {
+  margin-bottom: 20px;
+}
+
+.logo1 img {
+  width: 120px;
+  height: 120px;
+}
+
+
+.intro h1 {
+    margin-top: 10px;
+}
+
+.header-three {
+    color: #374248;
+    font-size: 1.8em;
+    letter-spacing: .02em;
+    line-height: 1.5;
+    margin: 0 0 0.5em 0;
+    text-transform: none;
+}
+
+.header-three {
+    margin-bottom: 0;
+}
+.paragraph-four{
+    font-size: 1.3em;
+    margin: 1em 0;
+}
+.form-wrapper {
+    background: #f2f2f2;
+    border-radius: 5px;
+    max-width: 450px;
+    margin: 0 auto; 
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+fieldset {
+    border: none;
+    color: #808689;
+    font-family: "Lucida Grande",Arial,Helvetica,sans-serif;
+    margin: 0 0 10px 0;
+    padding: 0;
+    position: relative;
+}
+
+fieldset {
+    border: 1px solid silver;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+fieldset label {
+    display: inline-block;
+    font-size: 1.2em;
+}
+
+fieldset .input-container{
+    margin: 10px 0 0;
+    overflow: hidden;
+}
+
+
+fieldset.error .input-container {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #c74b44;
+    border-radius: 3px;
+}
+
+fieldset input {
+    border: 1px solid #cfd1d2;
+    border-radius: 6px;
+    color: #808689;
+    font-size: 1.2em;
+    line-height: 2.0;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.error .parsley-errors-list {
+    display: block;
+}
+
+.parsley-errors-list {
+    border: none;
+    display: none;
+    float: right;
+    font-size: 1em;
+    line-height: 1.6;
+    list-style: none;
+    margin: 0;
+    padding: 10px 10px 10px 0;
+    text-align: right;
+    width: 25%;
+}
+
+.parsley-errors-list li {
+    color: #c74b44;
+    font-weight: bold;
+}
+
+fieldset.success .input-container:before {
+    content: "\2713";
+    color: #91c945;
+    display: inline-block;
+    font-family: "virb-icons";
+    font-size: 10px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+    line-height: 1;
+    padding: 4px 3px 4px 4px;
+    position: absolute;
+    speak: none;
+    text-transform: none;
+    top: 10px;
+    right: 7px;
+}
+
+
+/****************** Select movie type group *****************************/
+
+fieldset .captcha {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+fieldset .captcha>ul {
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+fieldset .captcha > ul li {
+    float: left;
+    width: 20%;
+    margin-bottom: 10px;
+    margin-right: 2%;
+    text-align: center;
+}
+
+fieldset .captcha > ul li:nth-child(2) {
+    width: 25%;
+}
+
+fieldset .captcha > ul li:nth-child(3) {
+    width: 48%;
+}
+
+fieldset .captcha > ul li:nth-child(5) {
+    width: 25%;
+}
+
+fieldset .captcha > ul li:nth-child(6) {
+    width: 48%;
+}
+
+fieldset .captcha > ul li:nth-child(8) {
+    width: 25%;
+}
+
+fieldset .captcha > ul li:nth-child(9) {
+    width: 48%;
+}
+
+fieldset .captcha > ul li:nth-child(11) {
+    width: 25%;
+}
+
+fieldset .captcha > ul li:nth-child(12) {
+    width: 48%;
+}
+
+fieldset .captcha > ul li a {
+    color: #808689;
+    background-color: #fff;
+    display: block;
+    padding: 3px 0;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+fieldset .captcha > ul li a.selected {
+    color: #fff;
+    background-color: #4cae4c;
+    cursor: pointer;
+}
+
+.movie-type {
+    color: #0093da;
+    background: transparent;
+    text-decoration: none;
+}
+
+
+/********************* Record movie button *************************/
+
+.form-wrapper .button-wrapper {
+    margin-top: 0px;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.button-special{
+   margin: 0 auto;
+   float: none;
+   width: 100%;
+   text-align: center;
+   font-size: 18px;
+   min-width: 190px;
+   padding: 0.95em 1.4em 1em;
+}
+
+
+/******************** Mark favourite radiobutton **********************/
+
+.roundedCheckbox{
+  width: 28px;
+  height: 28px;
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  background: #fcfff4;
+  background: -webkit-linear-gradient(top, #fcfff4 0%, #5cb85c 40%, #4cae4c 100%);
+  background: linear-gradient(to bottom, #fcfff4 0%, #5cb85c 40%, #4cae4c 100%);
+  border-radius: 50px;
+  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.roundedCheckbox label {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  cursor: pointer;
+  background: -webkit-linear-gradient(top, #5cb85c 0%, #4cae4c 100%);
+  background: linear-gradient(to bottom, #5cb85c 0%, #4cae4c 100%);
+  border-radius: 50px;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white;
+}
+
+.roundedCheckbox label:after {
+  content: '';
+  width: 12px;
+  height: 8px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border: 3px solid #fcfff4;
+  border-top: none;
+  border-right: none;
+  background: transparent;
+  opacity: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.roundedCheckbox label:hover::after {
+  opacity: 0.3;
+}
+.roundedCheckbox input[type=checkbox] {
+  visibility: hidden;
+}
+.roundedCheckbox input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+
+.mark-favourite{
+  padding-left: 40px;
+  vertical-align: bottom;
+}
+
+
+/************************* Rate group **********************************/
+
+.rating{
+   float: left;
+   padding-left: 110px;
+   margin-top: -25px;
+}
+
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-1px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1.15em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+.rate-movie{
+  margin-top: 10px;
+}
+
+.select-movie-type{
+  margin-bottom: 10px;
+}
+
+
+/****************** datepicker margin-top changes when switching between in cinemas and on laptop ******/
+
+.margin-in-cinemas{
+   margin-top: 0px;
+}
+
+.margin-on-laptop{
+  margin-top: -50px;
+}
+
+.seen-date-padding {
+   padding-top: 20px;
+}
+
+/************** Switch between in cinemas and on laptop *****************************/
+
+.onoffswitch {
+    position: relative; 
+    width: 120px;
+    -webkit-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select: none;
+    margin-top: 10px;
+    margin-left: 220px;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; 
+    overflow: hidden; 
+    cursor: pointer;
+    border: 1px solid #999999; 
+    border-radius: 20px;
+}
+
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+    content: "In cinemas";
+    padding-left: 10px;
+    background-color: #4cae4c; 
+    color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "On laptop";
+    padding-right: 10px;
+    background-color: #EEEEEE; 
+    color: #999999;
+    text-align: right;
+}
+
+.onoffswitch-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 86px;
+    border: 1px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}
+
+.place-movie{
+   margin-top: 20px;
+   margin-bottom: -60px;
+} 
+
+
+
